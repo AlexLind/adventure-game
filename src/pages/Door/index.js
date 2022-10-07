@@ -21,7 +21,7 @@ console.log(doors)
         <span>Click a door to enter:</span> <br />
         {!doors.length ? <h2>No doors left</h2> : doors.map((door, index) => {
             return (
-                <Link to={`${location.pathname}/${door}/fight`} state={door}>
+                <Link to={`${location.pathname}/${door}/`} state={door}>
                 <p>{door}</p>
                 </Link>
             )
