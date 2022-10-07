@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
+import { generateRandom } from "../../utils";  
 
 
 
 function Castles() {
-const [castles, setCastles] = useState(['red', 'green', 'blue'],)
+const [castles, setCastles] = useState(generateRandom)
 
 
 console.log(castles)
@@ -17,7 +18,7 @@ console.log(castles)
         {!castles.length ? <h2>No castles left</h2> : castles.map((castle, index) => {
             return (
                 <Link to={`/castles/${castle}`} state={castle}>
-                <p>{castle}</p>
+                <p style={{color: castle}}>{castle}</p>
                 </Link>
             )
         })}

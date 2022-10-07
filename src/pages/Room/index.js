@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Route, Routes, Link } from "react-router-dom";
+import { generateRandom } from "../../utils";  
+
 
 
 
 
 function Castles() {
-const [rooms, setRooms] = useState(['Yellow', 'Green', 'Brown'],)
+const [rooms, setRooms] = useState(generateRandom)
 const location = useLocation();
-
-console.log(location)
-
-
-console.log(rooms)
 
 
     return (
@@ -22,7 +19,7 @@ console.log(rooms)
         {!rooms.length ? <h2>No rooms left</h2> : rooms.map((room, index) => {
             return (
                 <Link to={`${location.pathname}/${room}`} state={room}>
-                <p>{room}</p>
+                <p style={{color: room}}>{room}</p>
                 </Link>
             )
         })}
